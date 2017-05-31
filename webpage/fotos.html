@@ -1,136 +1,302 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Modul 152</title>
+<title>M152 WebPage</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+</style>
+<script>
+	//Schöpfi
+  function openModal() {
+    document.getElementById('myModal').style.display = "block";
+  }
 
-	<!--CSS Einbinden-->
-	<link rel="stylesheet" href="css/style.css">
+  function closeModal() {
+    document.getElementById('myModal').style.display = "none";
+  }
+
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    var captionText = document.getElementById("caption");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    captionText.innerHTML = dots[slideIndex-1].alt;
+  }
 
 
-	<script>
-	function openModal() {
-	  document.getElementById('myModal').style.display = "block";
-	}
 
-	function closeModal() {
-	  document.getElementById('myModal').style.display = "none";
-	}
+	//Hurni
+  function openHurniModal() {
+    document.getElementById('hurniModal').style.display = "block";
+  }
 
-	var slideIndex = 1;
-	showSlides(slideIndex);
+  function closeHurniModal() {
+    document.getElementById('hurniModal').style.display = "none";
+  }
 
-	function plusSlides(n) {
-	  showSlides(slideIndex += n);
-	}
+  var slideIndex = 1;
+  showHurniSlides(slideIndex);
 
-	function currentSlide(n) {
-	  showSlides(slideIndex = n);
-	}
+  function plusHurniSlides(n) {
+    showHurniSlides(slideIndex += n);
+  }
 
-	function showSlides(n) {
-	  var i;
-	  var slides = document.getElementsByClassName("mySlides");
-	  var dots = document.getElementsByClassName("demo");
-	  var captionText = document.getElementById("caption");
-	  if (n > slides.length) {slideIndex = 1}
-	  if (n < 1) {slideIndex = slides.length}
-	  for (i = 0; i < slides.length; i++) {
-	    slides[i].style.display = "none";
-	  }
-	  for (i = 0; i < dots.length; i++) {
-	    dots[i].className = dots[i].className.replace(" active", "");
-	  }
-	  slides[slideIndex-1].style.display = "block";
-	  dots[slideIndex-1].className += " active";
-	  captionText.innerHTML = dots[slideIndex-1].alt;
-	}
-	</script>
+  function currentHurniSlide(n) {
+    showHurniSlides(slideIndex = n);
+  }
 
-
-</head>
+  function showHurniSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("hurniSlides");
+    var dots = document.getElementsByClassName("demo");
+    var captionText = document.getElementById("caption");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    captionText.innerHTML = dots[slideIndex-1].alt;
+  }
+</script>
 <body>
-	<header>
-		<p class="logoHeader">Placholder Logo no1</p>
-		<p id="titel">Titel</p>
-		<p class="logoHeader">Placholder Logo no2</p>
-	</header>
-	<nav>
-		<p href="index.html">Home</p>
-		<p href="fotos.html" id="currentNav">Fotos</p>
-		<p>Videos</p>
-		<p>Impressum</p>
-	</nav>
-	<content>
-		<p>Here comes the content</p>
-		<!--Hier sollten die kleinen Bilder kommen zum schön darstellen und so-->
-		<div class="row">
-		  <div class="column">
-		    <img src="pictures/Desert.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow">
-		  </div>
-		  <div class="column">
-		    <img src="pictures/Koala.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow">
-		  </div>
-		  <div class="column">
-		    <img src="pictures/Penguins.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow">
-		  </div>
-		  <div class="column">
-		    <img src="pictures/Tulips.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
-		  </div>
-		</div>
 
-		<div id="myModal" class="modal">
-		  <span class="close cursor" onclick="closeModal()">&times;</span>
-		  <div class="modal-content">
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    <a class="w3-bar-item w3-theme-l1 text-align-center">Fasnacht WebPage M152</a>
+  </div>
+</div>
 
-		    <div class="mySlides">
-		      <div class="numbertext">1 / 4</div>
-		        <img src="pictures/Desert.jpg" style="width:100%">
-		    </div>
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" style="z-index:3;width:250px;margin-top:43px;" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b>Navigation</b></h4>
+  <a class="w3-bar-item w3-button w3-hover-black" href="index.html">Home</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#">Fotos</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="videos.html">Videos</a>
+  <a class="w3-bar-item w3-button w3-hover-black" href="#">Impressum</a>
+</nav>
 
-		    <div class="mySlides">
-		      <div class="numbertext">2 / 4</div>
-		        <img src="pictures/Koala.jpg" style="width:100%">
-		    </div>
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
-		    <div class="mySlides">
-		      <div class="numbertext">3 / 4</div>
-		        <img src="pictures/Penguins.jpg" style="width:100%">
-		    </div>
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
 
-		    <div class="mySlides">
-		      <div class="numbertext">4 / 4</div>
-		        <img src="pictures/Tulips.jpg" style="width:100%">
-		    </div>
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Fotos von Patrick Schöpfer</h1>
+      <!--Hier sollten die kleinen Bilder kommen zum schön darstellen und so-->
+    <div class="row">
+      <div class="column">
+        <img src="pictures/DesertSmall.png" onclick="openModal();currentSlide(1)" class="hover-shadow">
+      </div>
+      <div class="column">
+        <img src="pictures/KoalaSmall.png" onclick="openModal();currentSlide(2)" class="hover-shadow">
+      </div>
+      <div class="column">
+        <img src="pictures/PenguinsSmalll.png" onclick="openModal();currentSlide(3)" class="hover-shadow">
+      </div>
+      <div class="column">
+        <img src="pictures/TulpisSmall.png" onclick="openModal();currentSlide(4)" class="hover-shadow">
+      </div>
+    </div>
 
-		    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-		    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div id="myModal" class="modal">
+      <span class="close cursor" onclick="closeModal()">&times;</span>
+      <div class="modal-content">
 
-		    <div class="caption-container">
-		      <p id="caption"></p>
-		    </div>
+        <div class="mySlides">
+          <div class="numbertext">1 / 4</div>
+            <img src="pictures/Desert.jpg" style="width:100%">
+        </div>
 
-		    <div class="column">
-		      <img class="demo" src="pictures/Desert.jpg" onclick="currentSlide(1)" alt="Nature">
-		    </div>
+        <div class="mySlides">
+          <div class="numbertext">2 / 4</div>
+            <img src="pictures/Koala.jpg" style="width:100%">
+        </div>
 
-		    <div class="column">
-		      <img class="demo" src="pictures/Koala.jpg" onclick="currentSlide(2)" alt="Trolltunga">
-		    </div>
+        <div class="mySlides">
+          <div class="numbertext">3 / 4</div>
+            <img src="pictures/Penguins.jpg" style="width:100%">
+        </div>
 
-		    <div class="column">
-		      <img class="demo" src="pictures/Penguins.jpg" onclick="currentSlide(3)" alt="Mountains">
-		    </div>
+        <div class="mySlides">
+          <div class="numbertext">4 / 4</div>
+            <img src="pictures/Tulips.jpg" style="width:100%">
+        </div>
 
-		    <div class="column">
-		      <img class="demo" src="pictures/Tulips.jpg" onclick="currentSlide(4)" alt="Lights">
-		    </div>
-		  </div>
-		</div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        <div class="caption-container">
+          <p id="caption"></p>
+        </div>
+
+        <div class="column">
+          <img class="demo" src="pictures/Desert.jpg" onclick="currentSlide(1)" alt="Nature">
+        </div>
+
+        <div class="column">
+          <img class="demo" src="pictures/Koala.jpg" onclick="currentSlide(2)" alt="Trolltunga">
+        </div>
+
+        <div class="column">
+          <img class="demo" src="pictures/Penguins.jpg" onclick="currentSlide(3)" alt="Mountains">
+        </div>
+
+        <div class="column">
+          <img class="demo" src="pictures/Tulips.jpg" onclick="currentSlide(4)" alt="Lights">
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <!--FETTELI START MAL LUEGE-->
+  <content>
+    
 
 
-	</content>
-	<footer>
-		<p>Footer am start</p>
-	</footer>
+  </content>
+
+  </div>
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Fotos von Pascal Hurni</h1>
+          <div class="row">
+      <div class="column">
+        <img src="pictures/DesertSmall.png" onclick="openHurniModal();currentHurniSlide(1)" class="hover-shadow">
+      </div>
+      <div class="column">
+        <img src="pictures/KoalaSmall.png" onclick="openHurniModal();currentHurniSlide(2)" class="hover-shadow">
+      </div>
+      <div class="column">
+        <img src="pictures/PenguinsSmalll.png" onclick="openHurniModal();currentHurniSlide(3)" class="hover-shadow">
+      </div>
+      <div class="column">
+        <img src="pictures/TulpisSmall.png" onclick="openHurniModal();currentHurniSlide(4)" class="hover-shadow">
+      </div>
+    </div>
+
+    <div id="hurniModal" class="modal">
+      <span class="close cursor" onclick="closeHurniModal()">&times;</span>
+      <div class="modal-content">
+
+        <div class="hurniSlides">
+          <div class="numbertext">1 / 400</div>
+            <img src="pictures/Desert.jpg" style="width:100%">
+        </div>
+
+        <div class="hurniSlides">
+          <div class="numbertext">2 / 400</div>
+            <img src="pictures/Koala.jpg" style="width:100%">
+        </div>
+
+        <div class="hurniSlides">
+          <div class="numbertext">3 / 400</div>
+            <img src="pictures/Penguins.jpg" style="width:100%">
+        </div>
+
+        <div class="hurniSlides">
+          <div class="numbertext">4 / 400</div>
+            <img src="pictures/Tulips.jpg" style="width:100%">
+        </div>
+
+        <a class="prev" onclick="plusHurniSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusHurniSlides(1)">&#10095;</a>
+
+        <div class="caption-container">
+          <p id="caption"></p>
+        </div>
+
+        <div class="column">
+          <img class="demo" src="pictures/Desert.jpg" onclick="currentHurniSlide(1)" alt="Nature">
+        </div>
+
+        <div class="column">
+          <img class="demo" src="pictures/Koala.jpg" onclick="currentHurniSlide(2)" alt="Trolltunga">
+        </div>
+
+        <div class="column">
+          <img class="demo" src="pictures/Penguins.jpg" onclick="currentHurniSlide(3)" alt="Mountains">
+        </div>
+
+        <div class="column">
+          <img class="demo" src="pictures/Tulips.jpg" onclick="currentHurniSlide(4)" alt="Lights">
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </div>
+
+  <footer id="myFooter">
+    <div class="w3-container w3-theme-l2 w3-padding-32 text-align-center">
+      <h4>© Patrick Schöpfer & Pascal Hurni</h4>
+    </div>
+  </footer>
+
+<!-- END MAIN -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === 'block') {
+        mySidebar.style.display = 'none';
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.display = 'block';
+        overlayBg.style.display = "block";
+    }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+</script>
+
 </body>
 </html>
