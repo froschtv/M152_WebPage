@@ -87,6 +87,45 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     dots[slideIndex-1].className += " active";
     captionText.innerHTML = dots[slideIndex-1].alt;
   }
+
+  //LOOOOGOOOOOOS
+  //Hurni
+  function openLogoModal() {
+    document.getElementById('logoModal').style.display = "block";
+  }
+
+  function closeLogoModal() {
+    document.getElementById('logoModal').style.display = "none";
+  }
+
+  var slideIndex = 1;
+  showHurniSlides(slideIndex);
+
+  function plusLogoSlides(n) {
+    showHurniSlides(slideIndex += n);
+  }
+
+  function currentLogoSlide(n) {
+    showHurniSlides(slideIndex = n);
+  }
+
+  function showLogoSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("hurniSlides");
+    var dots = document.getElementsByClassName("demo");
+    var captionText = document.getElementById("caption");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    captionText.innerHTML = dots[slideIndex-1].alt;
+  }
 </script>
 <body>
 
@@ -257,14 +296,65 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     </div>
     </div>
     </div>
+
+  <!--LOOOOGOOOOOOOS-->
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 class="w3-text-teal">Loooooooogoooooooooooos</h1>
+      <!--Hier sollten die kleinen Bilder kommen zum schön darstellen und so-->
+    <div class="row">
+      <div class="column">
+        <img src="pictures/DesertSmall.png" alt="Desert" onclick="openLogoModal();currentLogoSlide(1)" class="hover-shadow">
+      </div>
+      <div class="column">
+        <img src="pictures/KoalaSmall.png" alt="Desert" onclick="openLogoModal();currentLogoSlide(2)" class="hover-shadow">
+      </div>
+    </div>
+
+    <div id="logoModal" class="modal">
+      <span class="close cursor" onclick="closeLogoModal()">&times;</span>
+      <div class="modal-content">
+
+        <div class="mySlides">
+          <div class="numbertext">1 / 4</div>
+            <img src="pictures/Desert.jpg" alt="Desert" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+          <div class="numbertext">2 / 4</div>
+            <img src="pictures/Koala.jpg" alt="Desert" style="width:100%">
+        </div>
+
+        <a class="prev" onclick="plusLogoSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusLogoSlides(1)">&#10095;</a>
+
+        <div class="caption-container">
+          <p>
+          	
+          </p>
+        </div>
+
+        <div class="column">
+          <img class="demo" src="pictures/Desert.jpg" onclick="currentLogoSlide(1)" alt="Nature">
+        </div>
+
+        <div class="column">
+          <img class="demo" src="pictures/Koala.jpg" onclick="currentLogoSlide(2)" alt="Trolltunga">
+        </div>
+      </div>
+    </div>
+    </div>
+
   </div>
+
+
 
   <footer id="myFooter">
     <div class="w3-container w3-theme-l2 w3-padding-32 text-align-center">
       <h4>© Patrick Schöpfer & Pascal Hurni</h4>
     </div>
   </footer>
-
+</div>
 
 <script>
 // Get the Sidebar
