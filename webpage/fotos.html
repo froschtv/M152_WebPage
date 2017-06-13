@@ -73,7 +73,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   function showHurniSlides(n) {
     var i;
     var slides = document.getElementsByClassName("hurniSlides");
-    var dots = document.getElementsByClassName("demo");
+    var dots = document.getElementsByClassName("demoHurni");
     var captionText = document.getElementById("caption");
     if (n > slides.length) {slideIndex = 1}
     if (n < 1) {slideIndex = slides.length}
@@ -89,7 +89,6 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   }
 
   //LOOOOGOOOOOOS
-  //Hurni
   function openLogoModal() {
     document.getElementById('logoModal').style.display = "block";
   }
@@ -102,16 +101,16 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   showHurniSlides(slideIndex);
 
   function plusLogoSlides(n) {
-    showHurniSlides(slideIndex += n);
+    showLogoSlides(slideIndex += n);
   }
 
   function currentLogoSlide(n) {
-    showHurniSlides(slideIndex = n);
+    showLogoSlides(slideIndex = n);
   }
 
   function showLogoSlides(n) {
     var i;
-    var slides = document.getElementsByClassName("hurniSlides");
+    var slides = document.getElementsByClassName("logoSlides");
     var dots = document.getElementsByClassName("demo");
     var captionText = document.getElementById("caption");
     if (n > slides.length) {slideIndex = 1}
@@ -206,26 +205,26 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         </div>
 
         <div class="column">
-          <img class="demo" src="pictures/Desert.jpg" onclick="currentSlide(1)" alt="Nature">
+          <img class="demo" src="pictures/DesertSmall.png" onclick="currentSlide(1)" alt="Nature">
         </div>
 
         <div class="column">
-          <img class="demo" src="pictures/Koala.jpg" onclick="currentSlide(2)" alt="Trolltunga">
+          <img class="demo" src="pictures/KoalaSmall.png" onclick="currentSlide(2)" alt="Trolltunga">
         </div>
 
         <div class="column">
-          <img class="demo" src="pictures/Penguins.jpg" onclick="currentSlide(3)" alt="Mountains">
+          <img class="demo" src="pictures/PenguinsSmalll.png" onclick="currentSlide(3)" alt="Mountains">
         </div>
 
         <div class="column">
-          <img class="demo" src="pictures/Tulips.jpg" onclick="currentSlide(4)" alt="Lights">
+          <img class="demo" src="pictures/TulpisSmall.png" onclick="currentSlide(4)" alt="Lights">
         </div>
       </div>
     </div>
     </div>
 
   </div>
-
+<!--Hurni Fettli-->
   <div class="w3-row w3-padding-64">
     <div class="w3-twothird w3-container">
       <h1 class="w3-text-teal">Fotos von Pascal Hurni</h1>
@@ -278,19 +277,19 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         </div>
 
         <div class="column">
-          <img class="demo" src="pictures/Desert.jpg" onclick="currentHurniSlide(1)" alt="Nature">
+          <img class="demoHurni" src="pictures/Desert.jpg" onclick="currentHurniSlide(1)" alt="Nature">
         </div>
 
         <div class="column">
-          <img class="demo" src="pictures/Koala.jpg" onclick="currentHurniSlide(2)" alt="Trolltunga">
+          <img class="demoHurni" src="pictures/Koala.jpg" onclick="currentHurniSlide(2)" alt="Trolltunga">
         </div>
 
         <div class="column">
-          <img class="demo" src="pictures/Penguins.jpg" onclick="currentHurniSlide(3)" alt="Mountains">
+          <img class="demoHurni" src="pictures/Penguins.jpg" onclick="currentHurniSlide(3)" alt="Mountains">
         </div>
 
         <div class="column">
-          <img class="demo" src="pictures/Tulips.jpg" onclick="currentHurniSlide(4)" alt="Lights">
+          <img class="demoHurni" src="pictures/Tulips.jpg" onclick="currentHurniSlide(4)" alt="Lights">
         </div>
       </div>
     </div>
@@ -315,13 +314,13 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
       <span class="close cursor" onclick="closeLogoModal()">&times;</span>
       <div class="modal-content">
 
-        <div class="mySlides">
-          <div class="numbertext">1 / 4</div>
+        <div class="logoSlides">
+          <div class="numbertext">1 / 2</div>
             <img src="pictures/Desert.jpg" alt="Desert" style="width:100%">
         </div>
 
-        <div class="mySlides">
-          <div class="numbertext">2 / 4</div>
+        <div class="logoSlides">
+          <div class="numbertext">2 / 2</div>
             <img src="pictures/Koala.jpg" alt="Desert" style="width:100%">
         </div>
 
